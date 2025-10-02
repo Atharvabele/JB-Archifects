@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display User Details</title>
+  <script>
+    window.onload = function() {
+      const detailsDiv = document.getElementById('userDetails');
+      const userDetails = sessionStorage.getItem('userDetails');
+
+      if (userDetails) {
+        const user = JSON.parse(userDetails);
+        detailsDiv.innerHTML = `
+          <p><strong>Name:</strong> ${user.name}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>Message:</strong> ${user.message}</p>
+        `;
+      } else {
+        detailsDiv.textContent = 'No user details found. Please enter details on the first page.';
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>User Details</h1>
+  <div id="userDetails"></div>
+  <br>
+  <a href="contact.html">Back to Form</a>
+</body>
+</html>

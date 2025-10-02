@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jagruti Borkar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <img src="img\img7.jpeg" alt="Jagruti Borkar Logo" class="logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <h1>Contact Us</h1>
+        </header>
+
+        <section class="contact-form-section">
+            <p>We would love to hear from you. Please fill out the form below to get in touch.</p>
+            <form action="" method="post" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" >
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" ></textarea>
+                </div>
+                <button type="submit" class="submit-button" onclick="Contact()">Save Message</button>
+                <a href="user.html">preview</a>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Jagruti Bolkowode. All rights reserved.</p>
+        </footer>
+    </main>
+
+</body>
+
+
+  <script>
+    function Contact() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+
+      if (!name || !email || !message) {
+        alert('Please fill out both fields!');
+        return;
+      }
+
+      const userDetails = { name, email, message };
+      sessionStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+      alert('User details saved! You can now visit the next page to view them.');
+    }
+  </script>
+
+</html>
+
